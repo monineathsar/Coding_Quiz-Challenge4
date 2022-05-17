@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Zen Maru Gothic', sans-serif;
+}
+
+body {
+    background-color: lightblue;
+}
+
+/* .gameContainer {
+    width: 700px;
+    height: 500px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    background-color: powderblue;
+    border-radius: 4px;
+} */
+
+.playBtn,
+.rulesBox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*Start game button styling*/
+.playBtn button{
+    color: black;
+    background-color: antiquewhite;
+    font-size: 25px;
+    font-weight: 500;
+    cursor: pointer;
+    outline: none;
+    border: solid;
+    padding: 10px 35px;
+    border-radius: 8px;
+}
+.rulesBox {
+    width: 700px;
+    background: white;
+    border-radius: 4px;
+}
+
+.rulesBox .rulesTitle {
+    height: 60px;
+}
+/* .highscoreBtn {
+color: black;
+background-color: whitesmoke;
+font-size: 25px;
+font-weight: 500;
+cursor: pointer;
+outline: none;
+border: none;
+padding: 10px 35px;
+border-radius: 8px;
+} */
