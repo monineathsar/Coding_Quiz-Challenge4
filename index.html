@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./Assets/style.css">
+    <link rel="stylesheet" href="./style.css">
     <title>Test Your Coding Knowledge</title>
 </head>
 <body class="gameContainer">
     <div>
-        <div class="playBtn"><button>Let's Go!</button></div>
+        <div class="playBtn"><button>Let's play!</button></div>
     </div>
     <!--Rules to play-->
     <div class="rulesBox">
         <div class="rulesTitle">
-            <span>How to play</span>
+            <span>Rules of the game:</span>
         </div>
         <div class="rulesList">
             <div class="rules">1. You have a tatal of <span>3 minutes</span> to answer 5 questions.</div>
@@ -23,10 +23,42 @@
             <div class="rules">4. Your score will be based on how much time you have left on the clock.</div>
         </div>
         <div class="buttons">
+            <button class="highscoreBtn">Highscores</button>
             <button class="quitBtn">Exit Game</button>
-            <button class="constinueBtn">Continue</button>
-            <button class="highscoreBtn">View Highscores</button>
+            <button class="contBtn">Continue</button>
         </div>
+    </div>
+    <div class="quizBox">
+        <h1>
+            <div class="title">Coding Quiz Application</div>
+            <div class="timer">
+                <div class="timeText">Time Left</div>
+                <div class="timerMins">3</div>
+            </div>
+        </h1>
+        <section>
+            <div class="questions">
+                <span>First question here</span>
+            </div>
+            <div class="answerList">
+                <div class="answer">
+                    <span>choice 1</span>
+                    <div class="icon tick"><i class="fas fa-check"></i></div>
+                </div>
+                <div class="answer">
+                    <span>choice 2</span>
+                    <div class="icon cross"><i class="fas fa-times"></i></div>
+                </div>
+                <div class="answer">
+                    <span>choice 3</span>
+                    <div class="icon cross"><i class="fas fa-times"></i></div>
+                </div>
+                <div class="answer">
+                    <span>choice 4</span>
+                    <div class="icon cross"><i class="fas fa-times"></i></div>
+                </div>
+            </div>
+        </section>
     </div>
 </body>
 </html>
