@@ -7,58 +7,49 @@
     <link rel="stylesheet" href="./style.css">
     <title>Test Your Coding Knowledge</title>
 </head>
-<body class="gameContainer">
-    <div>
-        <div class="playBtn"><button>Let's play!</button></div>
-    </div>
-    <!--Rules to play-->
+<body>
     <div class="rulesBox">
         <div class="rulesTitle">
             <span>Rules of the game:</span>
         </div>
         <div class="rulesList">
-            <div class="rules">1. You have a tatal of <span>3 minutes</span> to answer 5 questions.</div>
+            <div class="rules">1. You have a total of <span>3 minutes</span> to answer 5 questions.</div>
             <div class="rules">2. You can not change your answer once the selection was made.</div>
             <div class="rules">3. If answered incorrectly, <span>15 seconds</span> will be decucted from your total time.</div>
             <div class="rules">4. Your score will be based on how much time you have left on the clock.</div>
         </div>
         <div class="buttons">
             <button class="highscoreBtn">Highscores</button>
-            <button class="quitBtn">Exit Game</button>
             <button class="contBtn">Continue</button>
         </div>
     </div>
-    <div class="quizBox">
-        <h1>
-            <div class="title">Coding Quiz Application</div>
-            <div class="timer">
-                <div class="timeText">Time Left</div>
+    <div class="quizBox deactQuizBox">
+        <header>
+            <div class="quizTitle">Coding Quiz Application</div>
+            <div class="quizTimer">
+                <div class="timerText">Time Left</div>
                 <div class="timerMins">3</div>
             </div>
-        </h1>
+        </header>
         <section>
-            <div class="questions">
-                <span>First question here</span>
+            <div class="questionText">
+                <!--insert question from JS here-->
             </div>
             <div class="answerList">
-                <div class="answer">
-                    <span>choice 1</span>
-                    <div class="icon tick"><i class="fas fa-check"></i></div>
-                </div>
-                <div class="answer">
-                    <span>choice 2</span>
-                    <div class="icon cross"><i class="fas fa-times"></i></div>
-                </div>
-                <div class="answer">
-                    <span>choice 3</span>
-                    <div class="icon cross"><i class="fas fa-times"></i></div>
-                </div>
-                <div class="answer">
-                    <span>choice 4</span>
-                    <div class="icon cross"><i class="fas fa-times"></i></div>
-                </div>
+                <!--inser answer choices from JS-->
             </div>
         </section>
+        <footer>
+            <button class="nextBtn">Next</button>
+        </footer>
     </div>
+    <div class="scoreBox">
+        <header>
+            <div class="scoreBoxTitle">Highscores</div>
+            <div></div>
+        </header>
+
+    </div>
+    <script src="./script.js"></script>
 </body>
 </html>
