@@ -12,7 +12,8 @@ body {
 }
 
 .rulesBox,
-.quizBox {
+.quizBox,
+.highscoreBox {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -163,4 +164,51 @@ footer{
     justify-content: flex-end;
     align-items: center;
     padding: 0 25px;
+}
+
+footer button.show {
+    display: none;
+}
+
+.highscoreBox {
+    width: 400px;
+    height: 600px;
+    background: white;
+    border-radius: 4px;
+}
+
+.highscoreBox.deactHighscoreBox {
+    display: none;
+}
+
+.highscoreBox header{
+    height: 70px;
+    padding: 0 30px;
+    font-size: 25px;
+    font-weight: 600;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px 5px 0 0;
+    border-bottom: 1px solid lightgray;
+}
+
+.highscoreList{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    padding: 10px  20px;
+    margin: 10px;
+    text-decoration: underline;
+}
+
+.history{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    padding: 10px  20px;
+    margin: 10px;
 }

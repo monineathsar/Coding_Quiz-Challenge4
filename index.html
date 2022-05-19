@@ -43,11 +43,27 @@
             <button class="nextBtn">Next</button>
         </footer>
     </div>
-    <div class="scoreBox">
+    <div class="highscoreBox deactHighscoreBox">
+        <form>
+            <label for="playerInitials">Your Initial: </label>
+            <input type="text" placeholder="Your initials here..." name="playerInitials" id="playerInitials">
+        </form>
         <header>
-            <div class="scoreBoxTitle">Highscores</div>
-            <div></div>
+            <div class="highscoreBoxTitle">Highscores</div>
         </header>
+        <div class="highscoreList">
+            <div>Player</div>
+            <div>Score</div>
+        </div>   
+
+        <ul id="highscoreHistory">
+            <li class="history">
+                <div>Rotha</div>
+                <div>5</div>
+            </li>
+                
+                
+            </ul>
 
     </div>
     <script src="./script.js"></script>

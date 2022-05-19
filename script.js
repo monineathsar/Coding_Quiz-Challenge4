@@ -1,23 +1,33 @@
-//elements
-
+//RulesBox elements
 const rulesBox = document.querySelector(".rulesBox");
 const contBtn = rulesBox.querySelector(".buttons .contBtn");
-
-
-const scoreBox = document.querySelector(".scoreBox");
-const highscoreBtn = scoreBox.querySelector(".highscoreBtn button");
+const highscoreBtn = rulesBox.querySelector(".buttons .highscoreBtn");
+//HighscoreBox elements
+const highscoreBox = document.querySelector(".highscoreBox");
+//QuizBox elements
 const answerList = document.querySelector(".answerList");
 const timeText = document.querySelector(".quizTimer .timerText");
 const timeCount = document.querySelector(".quizTimer .timerMins");
 
 const quizBox = document.querySelector(".quizBox");
 
+const highscoreHistory = document.querySelector("#highscoreHistory");
+
+var timeLeft = 180;
+var scores = [];
+
 //add event lister to continue button
 contBtn.onclick = () => {
     rulesBox.classList.add("deactRules");
     quizBox.classList.remove("deactQuizBox");
     generateQuestions(0); 
-  
+    startTimer(3);
+
+}
+
+highscoreBtn.onclick = () => {
+    rulesBox.classList.add("deactRules");
+    highscoreBox.classList.remove("deactHighscoreBox"); 
 }
 
 function generateQuestions(index){
@@ -35,15 +45,59 @@ function generateQuestions(index){
         choices[i].setAttribute("onclick", "choiceSelected(this)");
     }
 }
+
+
+//when player clicks on an answer choice
+function choicesSelected(answer) {
+    //player's answer
+    let playerSelectedAnswer = answer.textContent; 
+    //correct answer
+    let correctAnswer = questions[questionCount].answer; 
+    //grabs all answer choices
+    const allChoices = answerList.children.length;
+
+    if(playerSelectedAnswer === correctAnswer){
+        nextBtn.classList.add("show");
+    }else{
+        timeCount--
+    }
+}
+
 //if Highscore button is clicked
 
-function choiceSelected(answer) {
-    
-}
 // highscoreBtn.addEventListener("click", ".scoreBox")
 
+//once quiz starts, timer also starts
+function countdown(){
+    var timeInterval = setInterval(function () {
+        var minutes = Math.floor(timeLeft / 60);
+        var seconds = timeLeft - (minutes * 60);
+        timeLeft--;
 
+        if (timeLeft < 1){
 
+        }
+    }, 1000);
+}
+
+function showScore(){
+    var scoreList = JSON.parse(localStorage.getItem('scores'));
+    if (scoreList !== null){
+      scores = scoreList;
+    }
+
+    renderScore();
+}
+
+function renderScore(){
+    highscoreHistory.innerHTML = "";
+    for (var i = 0; i < scores.length; i++) {
+        var score = scores[i];
+
+        var li = document.createElement("li");
+        li.textContent = score;
+    }
+}
 
 
 //questions
