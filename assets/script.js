@@ -14,13 +14,14 @@ var timeCount = document.querySelector(".quizTimer .timerMins");
 var quizBox = document.querySelector(".quizBox");
 var saveBtn = document.querySelector(".highscoreForm button")
 
+//global variables
 var timeLeft = 180;
 var scoresarray = [];
 var currentQuestion = 0;
 var timeComplete = 0;
 var timer;
 
-//questions
+//Quiz questions in array object form
 const questions = [
   {
   order: 1,
@@ -86,7 +87,7 @@ function startTimer() {
 
   if (timeLeft <= 0) {
     clearInterval(timer);
-    sendMessage();
+    gameOverMessage();
   } else {
     var minute = Math.floor(timeLeft / 60);
     var second = timeLeft - (minute * 60);
@@ -190,7 +191,7 @@ function reloadsRules() {
 }
 
 //message for when timer ends and game is over
-function sendMessage() {
+function gameOverMessage() {
   document.querySelector(".timerText").innerHTML = "GAME OVER!";
   document.getElementById("timerMins").style.display = "none";
   openHighscoreForm();
@@ -200,7 +201,7 @@ function generateQuestions(index){
   if (index > 4) { 
     timeComplete = timeLeft;
     clearInterval(timer);
-    sendMessage();
+    gameOverMessage();
     highscoreForm.classList.remove("deactHighscoreForm");
     return;
   }
