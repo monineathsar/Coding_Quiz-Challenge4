@@ -44,30 +44,35 @@
         </footer>
     </div>
     <div class="highscoreBox deactHighscoreBox">
-        <form>
-            <label for="playerInitials">Your Initial: </label>
-            <input type="text" placeholder="Your initials here..." name="playerInitials" id="playerInitials">
-        </form>
         <header>
-            <div class="highscoreBoxTitle">Highscores</div>
+            <div>Highscores</div>
         </header>
         <div class="highscoreList">
             <div>Player</div>
             <div>Score</div>
         </div>   
 
-        <ul id="highscoreHistory">
-            <li class="history">
-                <div>Rotha</div>
-                <div>5</div>
-            </li>
-                
-                
-        </ul>
+        <ul id="highscoreHistory"></ul>
+        
         <footer>
-            <button class="backBtn">Back</button>
+            <button class="backBtn">Main Page</button>
         </footer>
+    </div>
+    <div class="highscoreForm deactHighscoreForm">
+        <header>
+            <div>Game Over</div>
+        </header>
+        <div>
+            Enter your initials below to save your highscore!
+        </div>
+        <div>
 
+        </div>
+        <form>
+            <label for="playerInitials">Player:</label>
+            <input type="text" placeholder=" Your initials here..." name="playerInitials" id="playerInitials">  
+        </form>
+        <button>Save</button>
     </div>
     <script src="./assets/script.js"></script>
 </body>
