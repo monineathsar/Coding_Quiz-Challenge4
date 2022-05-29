@@ -1,37 +1,79 @@
 //RulesBox elements
-const rulesBox = document.querySelector(".rulesBox");
-const contBtn = rulesBox.querySelector(".buttons .contBtn");
-const highscoreBtn = rulesBox.querySelector(".buttons .highscoreBtn");
+var rulesBox = document.querySelector(".rulesBox");
+var contBtn = rulesBox.querySelector(".buttons .contBtn");
+var highscoreBtn = rulesBox.querySelector(".buttons .highscoreBtn");
 //HighscoreBox elements
-const highscoreBox = document.querySelector(".highscoreBox");
+var highscoreBox = document.querySelector(".highscoreBox");
+var backBtn = document.querySelector(".backBtn")
 //QuizBox elements
-const answerList = document.querySelector(".answerList");
-const timeText = document.querySelector(".quizTimer .timerText");
-const timeCount = document.querySelector(".quizTimer .timerMins");
+var answerList = document.querySelector(".answerList");
+var timeText = document.querySelector(".quizTimer .timerText");
+var timeCount = document.querySelector(".quizTimer .timerMins");
 
-const quizBox = document.querySelector(".quizBox");
+var quizBox = document.querySelector(".quizBox");
 
-const highscoreHistory = document.querySelector("#highscoreHistory");
+var highscoreHistory = document.querySelector("#highscoreHistory");
 
-var timeLeft = 180;
 var scores = [];
+var currentQuestion = 0;
 
-//add event lister to continue button
-contBtn.onclick = () => {
-    rulesBox.classList.add("deactRules");
-    quizBox.classList.remove("deactQuizBox");
-    generateQuestions(0); 
-    startTimer(3);
+//starts the timer once player click on continue button on rules page
+function startTimer() {
+  var count = 15;
+  var timer = setInterval(function(){
+  count--;
 
+  if (count === 0) {
+    clearInterval(timer);
+    sendMessage();
+  } else {
+    var minute = Math.floor(count / 60);
+    var second = count - (minute * 60);
+    second = second > 9 ? second : "0" + second;
+    document.getElementById("timerMins").innerHTML = minute + ":" + second;
+  } 
+  }, 1000);
+}
+//when player click on continue or highscore button on rules page
+contBtn.onclick = function() {
+  openQuizBox();
+  startTimer();
+  generateQuestions(currentQuestion);
 }
 
-highscoreBtn.onclick = () => {
-    rulesBox.classList.add("deactRules");
-    highscoreBox.classList.remove("deactHighscoreBox"); 
+highscoreBtn.onclick = function() {
+  openHighscore();
+}
+
+//reloads rules box when player is done viewing highscores page
+backBtn.onclick = function() {
+  reloadsRules();
+}
+
+//fuctions of main page buttons for highscore, continue, and back buttons of game
+function openQuizBox() {
+  rulesBox.classList.add("deactRules");
+  quizBox.classList.remove("deactQuizBox");
+}
+
+function openHighscore() {
+  rulesBox.classList.add("deactRules");
+  highscoreBox.classList.remove("deactHighscoreBox"); 
+}
+
+function reloadsRules() {
+  rulesBox.classList.remove("deactRules");
+  highscoreBox.classList.add("deactHighscoreBox");
+}
+
+//message for when timer ends and game is over
+function sendMessage() {
+  document.querySelector(".timerText").innerHTML = "GAME OVER!";
+  document.getElementById("timerMins").style.display = "none";
 }
 
 function generateQuestions(index){
-    const questionText = document.querySelector(".questionText");
+    var questionText = document.querySelector(".questionText");
 
     questionText.innerHTML = "<span>" + questions[index].order + "." + questions[index].question + "</span>";
     answerList.innerHTML = '<div class="choice"><span>'+ questions[index].choices[0] +'</span></div>'
@@ -39,9 +81,9 @@ function generateQuestions(index){
     + '<div class="choice"><span>'+ questions[index].choices[2] +'</span></div>'
     + '<div class="choice"><span>'+ questions[index].choices[3] +'</span></div>'; 
 
-    const choices = answerList.querySelectorAll(".choice");
+    var choices = answerList.querySelectorAll(".choice");
 
-    for (i=0; i <choices.length; i++){
+    for (i=0; i < choices.length; i++){
         choices[i].setAttribute("onclick", "choiceSelected(this)");
     }
 }
@@ -59,26 +101,18 @@ function choicesSelected(answer) {
     if(playerSelectedAnswer === correctAnswer){
         nextBtn.classList.add("show");
     }else{
-        timeCount--
+     
     }
 }
+
+
 
 //if Highscore button is clicked
 
 // highscoreBtn.addEventListener("click", ".scoreBox")
 
 //once quiz starts, timer also starts
-function countdown(){
-    var timeInterval = setInterval(function () {
-        var minutes = Math.floor(timeLeft / 60);
-        var seconds = timeLeft - (minutes * 60);
-        timeLeft--;
 
-        if (timeLeft < 1){
-
-        }
-    }, 1000);
-}
 
 function showScore(){
     var scoreList = JSON.parse(localStorage.getItem('scores'));
@@ -102,7 +136,7 @@ function renderScore(){
 
 //questions
 
-let questions = [
+const questions = [
     {
     order: 1,
     question: "What does HTML stand for?",

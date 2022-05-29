@@ -99,12 +99,12 @@ footer button{
     border-bottom: 1px solid lightgray;
 }
 
-.quizTitle{
+.quizBox.quizTitle{
     font-size: 20px;
     font-weight: 600;
 }    
 
-.quizTimer{
+.quizBox.quizTimer{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -121,7 +121,7 @@ footer button{
     font-size: 16px;
 }
 
-.timerMins{
+#timerMins{
     font-size: 18px;
     font-weight: 600;
     background: lightslategray;
