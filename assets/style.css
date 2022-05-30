@@ -11,6 +11,7 @@ body {
     background-color: lightblue;
 }
 
+/* sets rules, quiz, highscore history, highscore form boxes in middle of page */
 .rulesBox,
 .quizBox,
 .highscoreBox,
@@ -21,14 +22,11 @@ body {
     transform: translate(-50%, -50%);
 }
 
+/* Rules box styles */
 .rulesBox {
     width: 700px;
     background: white;
     border-radius: 4px;
-}
-
-.rulesBox.deactRules{
-    display: none;
 }
 
 .rulesTitle {
@@ -56,6 +54,7 @@ body {
     color: dodgerblue;
 }
 
+/* styles rules box buttons flex box */
 .rulesBox .buttons{
     height: 60px;
     display: flex;
@@ -65,6 +64,12 @@ body {
     border-top: 1px solid lightgray;
 }
 
+/* to show or hide rules box in JS */
+.rulesBox.deactRules{
+    display: none;
+}
+
+/* styles for all buttons on page */
 .buttons button,
 footer button,
 .highscoreForm button {
@@ -79,15 +84,12 @@ footer button,
     cursor: pointer;
 }
 
+/* quiz box styles */
 .quizBox {
     width: 600px;
     height: 475px;
     background: white;
     border-radius: 4px;
-}
-
-.quizBox.deactQuizBox {
-    display: none;
 }
 
 .quizBox header{
@@ -106,6 +108,7 @@ footer button,
     font-weight: 600;
 }    
 
+/* timer flex box */
 .quizBox.quizTimer{
     display: flex;
     justify-content: space-between;
@@ -123,6 +126,7 @@ footer button,
     font-size: 16px;
 }
 
+/* styles the timer display */
 #timerMins{
     font-size: 18px;
     font-weight: 600;
@@ -135,6 +139,12 @@ footer button,
     width: 45px;
 }
 
+/* to show or hide the quiz box in JS */
+.quizBox.deactQuizBox {
+    display: none;
+}
+
+/* styles quiz box questions and answers section */
 .quizBox section{
     padding: 25px 30px 20px;
 }
@@ -161,23 +171,12 @@ footer button,
     cursor: pointer;
 }
 
-footer{
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    flex-direction: column;
-    padding: 0 25px;
-}
-
+/* highscore history box styles */
 .highscoreBox {
     width: 400px;
     height: 600px;
     background: white;
     border-radius: 4px;
-}
-
-.highscoreBox.deactHighscoreBox {
-    display: none;
 }
 
 .highscoreBox header{
@@ -193,6 +192,7 @@ footer{
     border-bottom: 1px solid lightgray;
 }
 
+/* highscore list flex box */
 .highscoreList{
     display: flex;
     flex-direction: row;
@@ -203,6 +203,7 @@ footer{
     text-decoration: underline;
 }
 
+/* styles the li elements in JS */
 .history{
     display: flex;
     flex-direction: row;
@@ -212,6 +213,12 @@ footer{
     margin: 10px;
 }
 
+/* shows or hides highscore box in JS */
+.highscoreBox.deactHighscoreBox {
+    display: none;
+}
+
+/* styles the highscore form box */
 .highscoreForm {
     width: 400px;
     height: 400px;
@@ -219,10 +226,12 @@ footer{
     border-radius: 4px;
 }
 
+/* shows or hides highscore form in JS */
 .highscoreForm.deactHighscoreForm {
     display: none;
 }
 
+/* "game over" header on highscore form */
 .highscoreForm header{
     height: 70px;
     padding: 0 30px;
@@ -236,6 +245,7 @@ footer{
     border-bottom: 1px solid lightgray;
 }
 
+/* styles the highscore form box form section */
 .highscoreForm form {
     display: flex;
     align-items: center;

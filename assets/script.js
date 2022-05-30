@@ -96,7 +96,7 @@ function startTimer() {
 
 //when player click on continue button, the quiz starts and the timer will count down
 contBtn.onclick = function() {
-  //this will reload timer if player wants to play the quiz agian without refreshing the page
+  //this will reload timer if player wants to play the quiz agian without having to refreshing the page
   document.querySelector(".timerText").innerHTML = "Time Left";
   document.getElementById("timerMins").style.display = "block";
   //tells the game to start with 3 mins and begining on question #1
